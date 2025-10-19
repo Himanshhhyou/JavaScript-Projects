@@ -222,10 +222,13 @@ body.dark-theme .container{
     box-shadow: 0 4px 10px rgba(109,40,217,0.3);
 }
 
+.main-content .gallery-grid:has(.img-card){
+    margin-top: 30px;
+
+}
 .main-content .gallery-grid{
     display: grid;
     gap: 15px;
-    margin-top: 30px;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }
 .gallery-grid .img-card{
@@ -234,7 +237,7 @@ body.dark-theme .container{
     align-items: center;
     flex-direction: column;
     position: relative;
-    overflow: hidden;
+    overflow: hidden;x
     aspect-ratio: 1;
     border-radius: 16px;
     background: var(--color-input);
