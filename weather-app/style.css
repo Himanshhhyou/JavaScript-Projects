@@ -1,36 +1,37 @@
-/* Reset and Base Setup */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body */
 body {
-  display: grid;
-  place-items: center;
-  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #1d1160, #6efaa6);
-  overflow: hidden;
+  padding: 10px;
 }
 
-/* App Card (Glassmorphism) */
+/* Glass App Card */
 .app-card {
-  width: 90%;
-  max-width: 450px;
-  height: auto;
-  padding: 25px;
+  width: 100%;
+  max-width: 500px;
+  min-height: 90vh;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 20px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #fff;
+  padding: 25px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  color: #fff;
   transition: all 0.3s ease;
 }
 
@@ -42,20 +43,18 @@ body {
   border-radius: 25px;
   display: flex;
   align-items: center;
-  padding: 0 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   justify-content: space-between;
-  backdrop-filter: blur(8px);
+  padding: 0 15px;
+  backdrop-filter: blur(10px);
 }
 
 .search-area input {
   width: 85%;
-  height: 100%;
   border: none;
   outline: none;
-  font-size: 16px;
   background: transparent;
   color: #fff;
+  font-size: 16px;
 }
 
 .search-area input::placeholder {
@@ -72,8 +71,7 @@ body {
 .weather-area {
   width: 100%;
   text-align: center;
-  color: #fff;
-  margin-top: 40px;
+  margin: 40px 0;
 }
 
 .weather-area img {
@@ -83,13 +81,13 @@ body {
 }
 
 .weather-area h1 {
-  font-size: 64px;
+  font-size: 56px;
   font-weight: 600;
   margin: 10px 0;
 }
 
 .weather-area h2 {
-  font-size: 24px;
+  font-size: 22px;
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -99,48 +97,47 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-top: 30px;
-  color: #fff;
   flex-wrap: wrap;
+  gap: 10px;
+  color: #fff;
 }
 
-.info-area .info-card {
+.info-card {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  margin: 10px;
 }
 
-.info-area .info-card i {
-  font-size: 24px;
+.info-card i {
+  font-size: 22px;
   margin-right: 10px;
-  margin-top: 10px;
-}
-
-.info-area .info-card div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.info-area .info-card div span {
-  font-size: 14px;
-}
-
-.info-area .info-card div p {
-  font-weight: bold;
   margin-top: 5px;
 }
 
-/* Responsive */
+.info-card div span {
+  font-size: 13px;
+}
+
+.info-card div p {
+  font-weight: bold;
+  margin-top: 3px;
+  font-size: 15px;
+}
+
+/* Responsiveness */
 @media (max-width: 600px) {
   .app-card {
-    padding: 15px;
-    width: 95%;
+    min-height: 95vh;
+    padding: 20px 15px;
+  }
+
+  .weather-area img {
+    width: 140px;
+    height: 140px;
   }
 
   .weather-area h1 {
-    font-size: 48px;
+    font-size: 44px;
   }
 
   .weather-area h2 {
@@ -149,5 +146,6 @@ body {
 
   .info-area {
     flex-direction: column;
+    gap: 15px;
   }
-    }
+}
