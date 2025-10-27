@@ -10,8 +10,8 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 .app-card{
-    width: 400px;
-    height:  600px;
+    width: 90%;
+    height:  90%;
     padding: 20px;
     background: #6efaa6;
 background: linear-gradient(190deg, #E6E6FA 0%, #1d1160 98%);
