@@ -1,97 +1,153 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Reset and Base Setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    font-family: 'Poppins', sans-serif;
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1d1160, #6efaa6);
+  overflow: hidden;
 }
-.app-card{
-    width: 90%;
-    height:  90%;
-    padding: 20px;
-    background: #6efaa6;
-background: linear-gradient(190deg, #E6E6FA 0%, #1d1160 98%);
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 10px;
+
+/* App Card (Glassmorphism) */
+.app-card {
+  width: 90%;
+  max-width: 450px;
+  height: auto;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
 }
-.search-area{
-    width: 100%;
-    height: 50px;
-    background: #fff;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    justify-content: space-between;
+
+/* Search Area */
+.search-area {
+  width: 100%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  backdrop-filter: blur(8px);
 }
-.search-area input{
-    width: 85%;
-    height: 100%;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    border-radius: 25px;
+
+.search-area input {
+  width: 85%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+  color: #fff;
 }
-.search-area i{
-    font-size: 20px;
-    color: #333;
-    cursor: pointer;
+
+.search-area input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }
-.weather-area{
-    width: 100%;
-    height: 400px;
-    display: flex;
+
+.search-area i {
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Weather Area */
+.weather-area {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  margin-top: 40px;
+}
+
+.weather-area img {
+  width: 180px;
+  height: 180px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+}
+
+.weather-area h1 {
+  font-size: 64px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.weather-area h2 {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Info Area */
+.info-area {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+  color: #fff;
+  flex-wrap: wrap;
+}
+
+.info-area .info-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px;
+}
+
+.info-area .info-card i {
+  font-size: 24px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.info-area .info-card div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.info-area .info-card div span {
+  font-size: 14px;
+}
+
+.info-area .info-card div p {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .app-card {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .weather-area h1 {
+    font-size: 48px;
+  }
+
+  .weather-area h2 {
+    font-size: 18px;
+  }
+
+  .info-area {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    color: #fff;
-}
-.weather-area img{
-    width: 200px;
-    height: 200px;
-}
-.weather-area h1{
-    font-size: 64px;
-
-}
-.weather-area h2{
-    font-size: 24px;
-    color: #fff;
-}
-
-.info-area{
-    width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    color: #fff;
-}
-.info-area .info-card{
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-}
-.info-area .info-card i{
-    font-size: 24px;
-    margin-right: 10px;
-    margin-top: 10px;
-}
-.info-area .info-card div{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-.info-area .info-card div span{
-    font-size: 14px;
-}
-.info-area .info-card div p{
-    font-weight: bold;
-    margin-top: 5px;
-}
+  }
+    }
